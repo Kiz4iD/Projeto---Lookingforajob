@@ -10,11 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_14_141557) do
+ActiveRecord::Schema.define(version: 2021_02_14_175731) do
+
+  create_table "companies", force: :cascade do |t|
+    t.string "companyname"
+    t.string "logo"
+    t.string "address"
+    t.string "website"
+    t.string "instagram"
+    t.string "facebook"
+    t.string "linkedin"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "companyusers", force: :cascade do |t|
     t.string "email"
     t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "joboffers", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "averagesalary"
+    t.string "requirements"
+    t.date "datetoapply"
+    t.integer "jopvacancies"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

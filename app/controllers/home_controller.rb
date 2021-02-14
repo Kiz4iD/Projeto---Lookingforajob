@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @nome = params[:nome]
+    @company = Company.all
   end
 end 

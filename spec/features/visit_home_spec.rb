@@ -24,4 +24,14 @@ require 'rails_helper'
       expect(page).to have_content("I'm already registred")
     end
 
+    scenario 'Looking if the companies link is working' do 
+      company = Company.create!(companyname:"Pizzaria Xablau", logo:"xxxxxxxxx",
+                            address:"Santa Monica", website: "PizzariaXablau.com.br",
+                            instagram: "instagrampizzariaxablau", facebook:"facebookxablau",
+                            linkedin: "linkedinpizzariaxablau")    
+      visit root_path
+      click_on "Companies"
+      expect(page).to have_content("Pizzaria Xablau")
+    end
+
   end

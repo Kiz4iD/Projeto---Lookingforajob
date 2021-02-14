@@ -1,5 +1,6 @@
 class CompanyusersController < ApplicationController
   def index
+    @companyusers = Companyuser.all
   end
 
   def show 
