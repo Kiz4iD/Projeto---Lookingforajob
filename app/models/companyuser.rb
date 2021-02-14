@@ -1,0 +1,2 @@
+class Companyuser < ApplicationRecord
+end

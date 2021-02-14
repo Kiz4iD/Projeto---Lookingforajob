@@ -1,11 +1,27 @@
 require 'rails_helper'
 
-  feature 'Visitante acessa o home' do 
-    scenario 'com sucesso' do
+  feature 'Visitor looking the root' do 
+    scenario 'everything in the root page is working' do
       
       visit root_path
-
-      expect(page).to have_content('Boas Vindas')
-      
+      expect(page).to have_content('LOOKING FOR A JOB')
     end
+
+    scenario 'Looking if the company users link is working' do
+
+      visit root_path
+      click_on "Company Users"
+      expect(page).to have_content("E-mail")
+      expect(page).to have_content("Password")
+      expect(page).to have_content("I'm already registred")      
+    end
+
+    scenario 'Looking if the users link is working' do     
+      visit root_path
+      click_on "Users"
+      expect(page).to have_content("E-mail")
+      expect(page).to have_content("Password")
+      expect(page).to have_content("I'm already registred")
+    end
+
   end
