@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_144545) do
+ActiveRecord::Schema.define(version: 2021_02_21_150351) do
 
   create_table "candidates", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2021_02_21_144545) do
     t.string "instagram"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email_domain"
   end
 
   create_table "employers", force: :cascade do |t|
