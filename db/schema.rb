@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_143424) do
+ActiveRecord::Schema.define(version: 2021_02_21_144545) do
 
   create_table "candidates", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,19 +24,7 @@ ActiveRecord::Schema.define(version: 2021_02_21_143424) do
     t.index ["reset_password_token"], name: "index_candidates_on_reset_password_token", unique: true
   end
 
-  create_table "employers", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_employers_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_employers_on_reset_password_token", unique: true
-  end
-
-  create_table "enterprises", force: :cascade do |t|
+  create_table "companies", force: :cascade do |t|
     t.string "company_name"
     t.string "logo"
     t.string "address"
@@ -47,6 +35,18 @@ ActiveRecord::Schema.define(version: 2021_02_21_143424) do
     t.string "instagram"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "employers", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_employers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_employers_on_reset_password_token", unique: true
   end
 
 end
