@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_134815) do
+ActiveRecord::Schema.define(version: 2021_02_21_143424) do
 
   create_table "candidates", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,19 +22,6 @@ ActiveRecord::Schema.define(version: 2021_02_21_134815) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_candidates_on_email", unique: true
     t.index ["reset_password_token"], name: "index_candidates_on_reset_password_token", unique: true
-  end
-
-  create_table "companies", force: :cascade do |t|
-    t.string "company_name"
-    t.string "logo"
-    t.string "address"
-    t.string "website"
-    t.string "instagram"
-    t.string "facebook"
-    t.string "linkedin"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "email_domain"
   end
 
   create_table "employers", force: :cascade do |t|
@@ -49,13 +36,15 @@ ActiveRecord::Schema.define(version: 2021_02_21_134815) do
     t.index ["reset_password_token"], name: "index_employers_on_reset_password_token", unique: true
   end
 
-  create_table "job_offers", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.integer "average_salaray"
-    t.text "requirements"
-    t.date "date_to_apply"
-    t.integer "job_vacancies"
+  create_table "enterprises", force: :cascade do |t|
+    t.string "company_name"
+    t.string "logo"
+    t.string "address"
+    t.string "registred_number"
+    t.string "website"
+    t.string "linkedin"
+    t.string "facebook"
+    t.string "instagram"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
