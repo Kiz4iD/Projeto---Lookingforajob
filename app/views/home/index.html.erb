@@ -1,4 +1,13 @@
 <h1> Welcome to LookingForJobs </h1>
 <h2> <%= link_to 'Companies Available', companies_path %> </h2>
 <h2> <%= link_to 'Employer Section', new_employer_registration_path %> </h2>
+  <% if employer_signed_in?%>
+    <h3> <%= link_to "Logout", destroy_employer_session_path, method: :delete %> </h3>
+  <%else%>
+  <%end%>
+  
 <h2> <%= link_to 'Candidate Section', new_candidate_registration_path %> </h2>
+<% if candidate_signed_in?%>
+    <h3> <%= link_to "Logout", destroy_candidate_session_path, method: :delete %> </h3>
+  <%else%>
+  <%end%>

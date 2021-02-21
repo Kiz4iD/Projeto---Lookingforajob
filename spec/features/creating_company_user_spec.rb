@@ -36,7 +36,7 @@ feature 'creating companyuser' do
     click_on "Sign up"
 
 
-    expect(current_path).to eq new_companies_path
+    expect(current_path).to eq companies_path
     expect(page).to have_content("company_name")
     expect(page).to have_content("logo")
     expect(page).to have_content("address")
