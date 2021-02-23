@@ -1,0 +1,62 @@
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'vendor/**/*'
+    - 'config.ru'
+    - 'Gemfile'
+    - 'Guardfile'
+    - 'spec/spec_helper.rb'
+    - 'spec/fixtures/**/*'
+    - 'node_modules/**/*'
+  DisplayCopNames: true
+  TargetRubyVersion: 2.7
+  NewCops: enable
+  SuggestExtensions:
+    rubocop-rake: false
+
+Metrics/MethodLength:
+  Max: 40
+
+Metrics/AbcSize:
+  Max: 40
+
+Metrics/BlockLength:
+  CountComments: false  # count full line comments?
+  Max: 25
+  Exclude:
+    - "spec/**/*"
+
+
+Style/DateTime:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+  # NEW cops on 0.82 and 0.83 rubocop version
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Style/SlicingWithRange:
+  Enabled: true
